@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="cardRecord" data-init="cardRecord.init" data-layout="main" data-title="考勤">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-click="cardRecord.receiveButton_click">接收</a>
+                </div>
+            </div>
+            <ul id="cardRecordListView"></ul>
+        </div>
+
+        <script type="text/x-kendo-template" id="cardRecordListViewHeaderTemplate">
+            <div style="border: 1px gray solid; border-radius: 8px; width: 50%; margin: auto; text-align: center; background-color:lightgrey">
+                ${value}
+            </div>
+        </script>
+
+        <script type="text/x-kendo-template" id="cardRecordListViewTemplate">
+            <table style="font-size: 20px; width: 100%;">
+                <col width="50%" />
+                <col width="50%" />
+                <tr>
+                    <td>
+                        #= kendo.toString(kendo.parseDate(RecordedOn), "HH:mm:ss") #
+                    </td>
+                    <td>
+                        #=cardRecord.getActionTypeString(ActionType) #
+                    </td>
+                </tr>
+            </table>
+        </script>
+    </body>
+</html>

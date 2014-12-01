@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div data-role="view" id="announcement" data-init="announcement.init" data-show="announcement.show" data-layout="announcement">
+            <div data-role="header">
+                <div data-role="navbar" id="navbar">
+                    <a data-role="backbutton" data-align="left">后退</a>
+                </div>
+            </div>
+            <div>
+                <div class="header">
+                    <p id="IssuedBy"></p>
+                </div>
+                <div class="header">
+                    <h3 class="title" id="Title"></h3>
+                    <p class="issuedOn" id="IssuedOn"></p>
+                </div>
+                <p class="body" id="Body"></p>
+            </div>
+        </div>
+        <style scoped>
+            .header{
+                text-align:left;
+                margin-left:.5px;
+                margin-bottom:2px;
+                border-bottom-width:.5px;
+                border-bottom-style:solid;
+                border-bottom-color:#c8c8c8;
+            }
+            
+            .body{
+                text-align:left;
+                color:black;
+                margin-left:1px;
+            }
+        </style>
+    </body>
+</html>

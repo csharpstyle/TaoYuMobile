@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div data-role="view" id="announcements" data-init="announcements.init" data-layout="main" data-title="通知">
+            <ul id="announcementListView" data-role="listview"></ul>
+        </div>
+        
+        <script type="text/x-kendo-template" id="announcementsListViewTemplate">
+            <a href="views/announcement/announcement.html?announceId=#: AnnouncementId #">
+            <div>
+            #if(!IsReaded){#
+            <div class="item-unread"></div>
+            #}#
+            <div class="item-IssuedBy">#= IssuedBy #</div>
+            <div class="item-Date">
+                #=announcements.ParseDate(IssuedOn)#
+            </div><br/>
+            <div class="item-title">#= Title #</div>
+            </div><br/>
+            <div class="item-content">#=announcements.GetBodyPreview(Body)#</div>
+            </a>
+        </script>
+        <style scoped>
+            #announcementListView .item-unread{
+                width:12px;
+                height:12px;
+                border-radius:100%;
+                background-color:#007aff;
+                float:left;
+                margin-top:6px;
+            }
+            
+            #announcementListView .item-IssuedBy{
+                text-align:left;
+                float:left;
+                font-weight:bold;
+                margin-left:10px;
+            }
+            
+            #announcementListView .item-Date{
+                text-align:left;
+                float:right;
+                margin-right:12px;
+                color:#8e8e8e;
+            }
+            
+            #announcementListView .item-title{
+                text-align:left;
+                margin-left:10px;
+                float:left;
+            }
+            #announcementListView .item-content{
+                text-align:left;
+                margin-left:10px;
+                float:left;
+                color:#8e8e8e;
+            }
+        </style>
+    </body>
+</html>

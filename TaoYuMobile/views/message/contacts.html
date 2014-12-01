@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="messageContacts" data-init="messageContacts.init" data-layout="main" data-title="联系人">
+            <ul id="contactListView"></ul>
+        </div>
+
+        <script type="text/x-kendo-template" id="contactListViewTemplate">
+            <a href="views/message/individual.html?contactId=#: UserId #">
+                <div>#= Name #</div>
+                <div>#= messageContacts.getContactTypeString(Type) #</div>
+            </a>
+        </script>
+    </body>
+</html>

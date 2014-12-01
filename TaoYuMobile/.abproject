@@ -2,45 +2,46 @@
   "ProjectName": "TaoYuMobile",
   "ProjectGuid": "5e60ff52-2ef5-4722-a742-93816e8ca1b6",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.TaoYuMobile",
+  "AppIdentifier": "cn.project7.TaoYuMobile",
   "DisplayName": "TaoYuMobile",
   "Author": "",
   "Description": "",
-  "BundleVersion": "1.0",
+  "BundleVersion": "0.1",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
     "1",
-	"2"
+    "2"
   ],
   "iOSBackgroundMode": [],
   "WP8TileTitle": "",
   "WP8Publisher": "",
   "WP8Capabilities": [],
   "WP8Requirements": [],
-  "WP8PublisherID": "",
-  "WP8ProductID": "",
+  "WP8PublisherID": "{407b98e1-fd95-4dc7-85d1-6b36104bc4ae}",
+  "WP8ProductID": "{5e60ff52-2ef5-4722-a742-93816e8ca1b6}",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "3.5.0",
+  "FrameworkVersion": "3.2.0",
   "CorePlugins": [
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
+    "org.apache.cordova.media-capture",
     "org.apache.cordova.console",
     "org.apache.cordova.contacts",
     "org.apache.cordova.device",
     "org.apache.cordova.device-motion",
     "org.apache.cordova.device-orientation",
-    "org.apache.cordova.dialogs",
     "org.apache.cordova.file",
     "org.apache.cordova.file-transfer",
     "org.apache.cordova.geolocation",
     "org.apache.cordova.globalization",
     "org.apache.cordova.inappbrowser",
     "org.apache.cordova.media",
-    "org.apache.cordova.media-capture",
     "org.apache.cordova.network-information",
+    "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
     "org.apache.cordova.statusbar",
-    "org.apache.cordova.vibration"
+    "org.apache.cordova.vibration",
+    "com.phonegap.plugins.sqlite@1.0.2"
   ],
   "AndroidPermissions": [
     "android.permission.ACCESS_COARSE_LOCATION",
@@ -73,5 +74,10 @@
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
   ],
-  "Framework": "Cordova"
+  "Framework": "Cordova",
+  "CordovaPluginVariables": {
+    "com.telerik.Cordova-MobileTestingExtension": {
+      "IOS_APP_URL": ""
+    }
+  }
 }
