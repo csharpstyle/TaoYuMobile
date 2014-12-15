@@ -17,7 +17,8 @@ var messageContacts = new function() {
                                },
                                error: function(result) {
                                    // notify the data source that the request failed
-                                   alert(result.status);
+                                   alert(result);
+                                   console.log(result);
                                    options.error(result);
                                }
                                

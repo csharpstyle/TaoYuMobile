@@ -71,6 +71,7 @@ var announcements = new function() {
     };
     
     this.setBadge = function(e){
+        return;
         if(0 == badge) return;
         var view = e.sender.view();
         var tabstrip = view.footer.find(".km-tabstrip").data("kendoMobileTabStrip");

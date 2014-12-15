@@ -29,7 +29,6 @@ var app;
         // hide the splash screen as soon as the app is ready. otherwise
         // Cordova will wait 5 very long seconds to do it for you.
         //navigator.splashscreen.hide();
-
         var skin;
         skin = ("android" == kendo.support.mobileOS.device) ? "flat" : "";
 
@@ -57,6 +56,13 @@ var app;
         //window.plugins.jPushPlugin.openNotificationInAndroidCallback = function(data1) {
         //    alert(data1);
         //};
+        
+        $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+            console.log(event);
+            console.log(jqxhr);
+            console.log(settings);
+            console.log(thrownError);
+        });
         
     }, false);
 }());
