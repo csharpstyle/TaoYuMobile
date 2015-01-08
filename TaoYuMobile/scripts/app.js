@@ -62,6 +62,7 @@ var app;
             console.log(jqxhr);
             console.log(settings);
             console.log(thrownError);
+            index.showMessage("您的网络好像不太给力，请稍后再试。");
         });
         
     }, false);

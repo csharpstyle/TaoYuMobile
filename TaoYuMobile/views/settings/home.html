@@ -3,7 +3,7 @@
 <html>
     <body>
         <div id="settingsHome" data-role="view" data-title="设置" data-layout="main" data-init="settingsHome.init">
-            <ul data-role="listview" data-style="inset">
+            <ul data-role="listview" data-style="inset" style="display: none;">
                 <li>
                     <label for="serverRootText">
                         服务地址:
@@ -11,7 +11,7 @@
                     </label>
                 </li>
             </ul>
-            <a data-click="settingsHome.saveButton_click" id="saveButton" type="button" data-role="button" style="display: block; margin: 2em; text-align: center;">保存</a>
+            <a data-click="settingsHome.saveButton_click" id="saveButton" type="button" data-role="button" style="display: none; margin: 2em; text-align: center;">保存</a>
             <a data-click="settingsHome.logoutButton_click" id="logoutButton" type="button" data-role="button" style="display: block; margin: 2em; text-align: center;">注销</a>
         </div>
     </body>

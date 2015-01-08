@@ -25,8 +25,8 @@ var settingsHome = new function() {
     this.getServerRoot = function() {        
         var serverRoot = localStorage.getItem("ServerRoot");
         if (null === serverRoot) {
-            serverRoot = "http://192.168.1.39/TaoYu/";
-            //serverRoot = "http://58.241.86.60:82/WebAPIs/";
+            //serverRoot = "http://192.168.1.39/TaoYu/";
+            serverRoot = "http://58.241.86.60:82/WebAPIs/";
         }
     
         return serverRoot;

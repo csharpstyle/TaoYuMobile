@@ -14,6 +14,7 @@
         <script src="scripts/JSLINQ.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/sqlite.js"></script>
+        <script src="scripts/index.js"></script>
         <script src="scripts/login.js"></script>
         <script src="scripts/home.js"></script>
         <script src="scripts/cardRecord/cardRecord.js"></script>
@@ -28,7 +29,6 @@
             <div data-role="header">
                 <div data-role="navbar">
                     <span data-role="view-title"></span>
-                    <span style="font-size: 10px;"> - beta_20141201</span>
                 </div>
             </div>
 
@@ -38,19 +38,43 @@
                 <div data-role="tabstrip">
                     <a href="views/home.html" data-icon="home">首页</a>
                     <a href="views/cardRecord/cardRecord.html" data-icon="organize">考勤</a>
-                    <a href="views/message/contacts.html" data-icon="info">消息</a>
+                    <a href="views/message/contacts.html" data-icon="contacts">消息</a>
                     <a href="views/announcement/announcements.html" id="announcementTab" data-icon="info">通知</a>
                     <!--<a href="views/message/contacts.html" data-icon="bookmarks">联系人</a>-->
                     <a href="views/settings/home.html" data-icon="settings">设置</a>
                 </div>
             </div>
         </div>
-        
+
         <div data-role="layout" data-id="messageIndividual">
             <!-- application views will be rendered here -->
         </div>
         <div data-role="layout" data-id="announcement">
             <!-- application views will be rendered here -->
+        </div>
+
+        <div class="modalView_message" data-role="modalview" id="messageModalView">
+            <style scoped>
+                .modalView_message
+                {
+                    width: 200px;
+                    height: 60px; 
+                    border-radius: 10px;
+                }
+                
+                .modalView_message .km-content
+                {
+                    color: white !important;
+                    background-color: black !important;
+                }
+                
+                .modalView_message .message
+                {
+                    margin: 10px;
+                    font-size: 16px;
+                }
+            </style>
+            <p class="message" id="messageModalView_message"></p>
         </div>
     </body>
 </html>

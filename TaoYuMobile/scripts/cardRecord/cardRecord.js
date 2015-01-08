@@ -19,7 +19,7 @@ var cardRecord = new function() {
                                },
                                fail: function(result) {
                                    // notify the data source that the request failed
-                                   alert(result);
+                                   //alert(result);
                                    options.error(result);
                                }
                            });

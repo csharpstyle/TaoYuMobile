@@ -4,13 +4,12 @@
   "projectVersion": 1,
   "AppIdentifier": "cn.project7.TaoYuMobile",
   "DisplayName": "TaoYuMobile",
-  "Author": "",
+  "Author": "ChangZhou ZhiHai Software Technology Co., Ltd",
   "Description": "TaoYuMobile",
-  "BundleVersion": "0.1",
+  "BundleVersion": "1.0.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
-    "1",
-    "2"
+    "1"
   ],
   "iOSBackgroundMode": [],
   "WP8TileTitle": "",
@@ -64,8 +63,7 @@
     "android.permission.WRITE_EXTERNAL_STORAGE"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "AndroidHardwareAcceleration": "false",
   "iOSStatusBarStyle": "Default",

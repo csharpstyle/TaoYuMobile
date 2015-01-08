@@ -39,7 +39,7 @@ var login = new function() {
                 app.navigate("views/home.html");
             })
             .fail(function(j, textStatus, errorThrown) {
-                alert(j + "   " + textStatus + "   " + errorThrown);
+                //alert(j + "   " + textStatus + "   " + errorThrown);
             })
             .always(function() {
             });
@@ -56,7 +56,7 @@ var login = new function() {
                     .done(function(result) {
                     })
                     .fail(function(j, textStatus, errorThrown) {
-                        alert(j + "   " + textStatus + "   " + errorThrown);
+                        //alert(j + "   " + textStatus + "   " + errorThrown);
                     })
                     .always(function() {
                     });

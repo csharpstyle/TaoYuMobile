@@ -45,7 +45,7 @@ var messageIndividual = new function() {
                 $("#messageText").val("");
             })
             .fail(function(j, textStatus, errorThrown) {
-                alert(j + "   " + textStatus + "   " + errorThrown);
+                //alert(j + "   " + textStatus + "   " + errorThrown);
             })
             .always(function() {
             });
@@ -110,7 +110,7 @@ var messageIndividual = new function() {
                                                      },
                                                      error: function(result) {
                                                          // notify the data source that the request failed
-                                                         alert(result.status);
+                                                         //alert(result.status);
                                                          options.error(result);
                                                      }
                                                  });

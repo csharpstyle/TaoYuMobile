@@ -34,7 +34,7 @@ var home = new function() {
                 $("#schoolNameSpan").text(data.SchoolName);
             })
             .fail(function(j, textStatus, errorThrown) {
-                alert(j + "   " + textStatus + "   " + errorThrown);
+                //alert(j + "   " + textStatus + "   " + errorThrown);
             })
             .always(function() {
             });

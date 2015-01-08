@@ -17,7 +17,7 @@ var messageContacts = new function() {
                                },
                                error: function(result) {
                                    // notify the data source that the request failed
-                                   alert(result);
+                                   //alert(result);
                                    console.log(result);
                                    options.error(result);
                                }
@@ -54,7 +54,6 @@ var messageContacts = new function() {
     };
     
     this.aaa = function() {
-        alert("aaa");
         var bbb = $('#contactListView').data('kendoMobileListView');
         bbb.dataSource.read();   // added line
         //bbb.refresh();
