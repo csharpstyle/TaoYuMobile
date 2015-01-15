@@ -19,6 +19,24 @@ var home = new function() {
                                               app.navigate("views/announcement/announcements.html");
                                           }
                                       });
+        
+        $("#poll").kendoTouch({
+                                          tap: function(e) {
+                                              app.navigate("views/poll/pollList.html");
+                                          }
+                                      });
+        
+        $("#examScore").kendoTouch({
+                                          tap: function(e) {
+                                              app.navigate("views/examScore/examList.html");
+                                          }
+                                      });
+        
+        $("#opinion").kendoTouch({
+                                          tap: function(e) {
+                                              app.navigate("views/opinion/opinionList.html");
+                                          }
+                                      });
     };
     
     this.show = function() {

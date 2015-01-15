@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="pollVote" data-layout="main" data-init="pollVote.init" data-show="pollVote.show">
+            <div data-role="header">
+                <div data-role="navbar" id="pollVote_navbar">
+                    <a data-role="backbutton" data-align="left">后退</a>
+                    <span data-role="view-title">投票</span>
+                    <a id="pollVote_voteButton" data-role="button" data-align="right" data-click="pollVote.voteButton_click">投票</a>
+                </div>
+            </div>
+            <div data-role="content" style="background-color: #E5E5E5;">
+                <div id="pollVote_title" style="margin: 8px;"></div>
+                <div id="pollVote_body" style="margin: 8px;"></div>
+                <ul id="pollVote_listView" data-style="inset"></ul>
+            </div>
+        </div>
+
+        <script type="text/x-kendo-template" id="pollVote_listViewTemplate">
+                <input data-role="switch" data-change="pollVote.switchChange" data-vote="#= Name #" data-checked="#= IsVoted #" data-enable="#= !pollVote.isVoted #" />
+                #= Name #
+        </script>
+    </body>
+</html>

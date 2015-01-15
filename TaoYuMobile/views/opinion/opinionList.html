@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="opinionList" data-init="opinionList.init" data-layout="main" data-title="老师评语">
+            <div data-role="header">
+                <div data-role="navbar" id="opinionList_navbar">
+                    <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-click="opinionList.refreshButton_click">刷新</a>
+                </div>
+            </div>
+            <ul id="opinionList_listView"></ul>
+        </div>
+
+        <script type="text/x-kendo-template" id="opinionList_listViewTemplate">
+            <a href="views/opinion/opinion.html?opinionId=#: Id #">
+                <div>#= Name #</div>
+                <div>#= kendo.toString(kendo.parseDate(Date), "yyyy/MM/dd") #</div>
+            </a>
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="pollList" data-init="pollList.init" data-layout="main" data-title="投票">
+            <div data-role="header">
+                <div data-role="navbar" id="pollList_navbar">
+                    <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-click="pollList.refreshButton_click">刷新</a>
+                </div>
+            </div>
+            <ul id="pollList_listView"></ul>
+        </div>
+
+        <script type="text/x-kendo-template" id="pollList_listViewTemplate">
+            <a href="views/poll/pollVote.html?pollId=#: Id #">
+                <div>#= Title #</div>
+                <div>#= kendo.toString(kendo.parseDate(Date), "yyyy/MM/dd") #</div>
+            </a>
+        </script>
+    </body>
+</html>

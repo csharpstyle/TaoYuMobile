@@ -1,2 +1,0 @@
-var examScore = new function() {   
-};

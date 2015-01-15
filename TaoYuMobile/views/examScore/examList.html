@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="examList" data-init="examList.init" data-layout="main" data-title="考试成绩">
+            <div data-role="header">
+                <div data-role="navbar" id="navbar">
+                    <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-click="examList.refreshButton_click">刷新</a>
+                </div>
+            </div>
+            <ul id="listView"></ul>
+        </div>
+
+        <script type="text/x-kendo-template" id="listViewTemplate">
+            <a href="views/examScore/scoreList.html?examScoreId=#: Id #">
+                <div>#= Name #</div>
+                <div>#= kendo.toString(kendo.parseDate(Date), "yyyy/MM/dd") #</div>
+            </a>
+        </script>
+    </body>
+</html>

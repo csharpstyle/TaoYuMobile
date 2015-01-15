@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div data-role="view" id="scoreList" data-layout="main" data-init="scoreList.init" data-show="scoreList.show">
+            <div data-role="header">
+                <div data-role="navbar" id="navbar11">
+                    <a data-role="backbutton" data-align="left">后退</a>
+                    <span data-role="view-title"></span>
+                    <a data-role="button" data-align="right" data-click="scoreList.refreshButton_click">刷新</a>
+                </div>
+            </div>
+            <div data-role="content" style="background-color: #E5E5E5;">
+                <ul id="listView11"></ul>
+            </div>
+        </div>
+
+        <script type="text/x-kendo-template" id="listViewTemplate11">
+            #= Name #
+            #= Score #
+        </script>
+    </body>
+</html>

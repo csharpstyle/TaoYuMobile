@@ -6,7 +6,7 @@
   "DisplayName": "TaoYuMobile",
   "Author": "ChangZhou ZhiHai Software Technology Co., Ltd",
   "Description": "TaoYuMobile",
-  "BundleVersion": "1.0.0",
+  "BundleVersion": "1.0.1",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
     "1"
@@ -72,10 +72,5 @@
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
   ],
-  "Framework": "Cordova",
-  "CordovaPluginVariables": {
-    "com.telerik.mobiletesting": {
-      "IOS_APP_URL": ""
-    }
-  }
+  "Framework": "Cordova"
 }
