@@ -1,14 +1,18 @@
 var cardRecord = new function() {
     var self = this;
+    var date;
+    var dataSource;
     
     this.init = function(e) {
-        var dataSource = new kendo.data.DataSource({
+        date = new Date();
+        
+        dataSource = new kendo.data.DataSource({
                                                        transport: {
                 read: function(options) {
                     // make JSONP request to http://demos.telerik.com/kendo-ui/service/products
                     $.ajax({
                                type: "GET",
-                               url: settingsHome.getServerRoot() + "zhihai/CardRecord/Student",
+                               url: settingsHome.getServerRoot() + "zhihai/CardRecord/Student?Date=" + kendo.toString(date, "yyyy/MM/dd"),
                                headers: {"Authorization": "bearer " + login.token},
                                success: function(result) {
                                    $.each(result, function(index, value) {
@@ -57,4 +61,26 @@ var cardRecord = new function() {
         var listView = $('#cardRecordListView').data('kendoMobileListView');
         listView.dataSource.read();
     };
+    
+    this.searchButton_click = function(e) {
+        var today = new Date();
+        $("#cardRecord_searchModalView").data("kendoMobileModalView").open();
+        $('#cardRecord_searchModalView_date').val(kendo.toString(today, 'yyyy-MM-dd'));
+    };
+    
+    this.searchModalView_close = function(e) {
+        $("#cardRecord_searchModalView").kendoMobileModalView("close");
+    }
+    
+    this.searchModalView_ok = function(e) {
+        var searchDate = $("#cardRecord_searchModalView_date").val();
+        if ("" === searchDate) {
+            alert("请选择考勤日期。");
+            return;
+        }
+        
+        $("#cardRecord_searchModalView").kendoMobileModalView("close");
+        date = searchDate;
+        dataSource.read();
+    }
 };

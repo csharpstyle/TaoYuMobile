@@ -6,14 +6,33 @@
             <div data-role="header">
                 <div data-role="navbar">
                     <span data-role="view-title"></span>
+                    <a data-role="button" data-align="left" data-click="cardRecord.searchButton_click">查询</a>
                     <a data-role="button" data-align="right" data-click="cardRecord.receiveButton_click">接收</a>
                 </div>
             </div>
             <ul id="cardRecordListView"></ul>
         </div>
+        
+        <div data-role="modalview" id="cardRecord_searchModalView" style="width: 90%; height: 200px;">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span>选择考勤日期</span>
+                    <a data-click="cardRecord.searchModalView_ok" data-role="button" data-align="left">确定</a>
+                    <a data-click="cardRecord.searchModalView_close" data-role="button" data-align="right">取消</a>
+                </div>
+            </div>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label for="serverRootText">
+                        考勤日期:
+                        <input id="cardRecord_searchModalView_date" type="date" />
+                    </label>
+                </li>
+            </ul>
+        </div>
 
         <script type="text/x-kendo-template" id="cardRecordListViewHeaderTemplate">
-            <div style="border: 1px gray solid; border-radius: 8px; width: 50%; margin: auto; text-align: center; background-color:lightgrey">
+            <div style="font-size: 20px; color: white; border: 1px lightgrey solid; border-radius: 8px;  margin: auto; width: 200px; text-align: center; background-color:lightgrey; line-height: 1em;">
                 ${value}
             </div>
         </script>

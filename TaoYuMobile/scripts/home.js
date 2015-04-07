@@ -1,5 +1,6 @@
 var home = new function() {
     var self = this;
+    this.userInfo = {};
     
     this.init = function() {
         $("#cardRecord").kendoTouch({
@@ -37,6 +38,12 @@ var home = new function() {
                                               app.navigate("views/opinion/opinionList.html");
                                           }
                                       });
+        
+        $("#message_class").kendoTouch({
+                                          tap: function(e) {
+                                              app.navigate("views/message/class.html");
+                                          }
+                                      });
     };
     
     this.show = function() {
@@ -47,6 +54,8 @@ var home = new function() {
                            })
             .done(function(data) {
                 console.log(data);
+                
+                self.userInfo = data;
                 $("#nameSpan").text(data.Name);
                 $("#classFullNameSpan").text(data.GradeName + data.ClassName);
                 $("#schoolNameSpan").text(data.SchoolName);

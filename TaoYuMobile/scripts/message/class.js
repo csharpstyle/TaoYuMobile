@@ -1,6 +1,5 @@
-var messageIndividual = new function() {
+var messageClass = new function() {
     var self = this;
-    this.contact = null;
     this.messages = [];
     
     this.init = function(e) {
@@ -8,12 +7,8 @@ var messageIndividual = new function() {
     
     this.show = function(e) {
         self.messages = [];
-        var contactId = e.view.params.contactId;     
-        self.contact = JSLINQ(messageContacts.contacts).First(function(item) {
-            return item.UserId === contactId;
-        });
-        
-        $("#messageIndividual_navbar").data("kendoMobileNavBar").title(self.contact.Name);
+        var userInfo = home.userInfo;
+        $("#messageClass_navbar").data("kendoMobileNavBar").title(userInfo.GradeName + userInfo.ClassName);
         
         try {
             self.loadMessages();
@@ -24,17 +19,15 @@ var messageIndividual = new function() {
     };
     
     this.sendButton_click = function(e) {        
-        var contactId = self.contact.UserId;
         var messageContent = $("#messageText").val();
         
         var data = {
-            ReceivedBy:contactId,
             MessageContent:messageContent
         };
               
         var jqxhr = $.ajax({
                                type: "POST",
-                               url: settingsHome.getServerRoot() + "zhihai/MessageIndividual/Send",
+                               url: settingsHome.getServerRoot() + "zhihai/MessageIndividual/SendClass",
                                headers: {"Authorization": "bearer " + login.token},
                                data: data
                            })
@@ -57,10 +50,11 @@ var messageIndividual = new function() {
     };
     
     this.loadMessages = function() {
+        var userInfo = home.userInfo;
         var db = sqlite.db;
         db.transaction(function(tx) {
-            tx.executeSql("SELECT * FROM Message_Individual WHERE (SentBy=? and ReceivedBy=?) or (SentBy=? and ReceivedBy=?) ORDER BY SentOn desc LIMIT 100",
-                          [login.userId, self.contact.UserId, self.contact.UserId, login.userId],
+            tx.executeSql("SELECT * FROM Message_Individual WHERE ReceivedBy=? ORDER BY SentOn desc LIMIT 100",
+                          [userInfo.ClassId],
                           function(tx, res) {
                               console.log(res.rows.length + " rows in db");
                               
@@ -81,7 +75,7 @@ var messageIndividual = new function() {
                                           // make JSONP request to http://demos.telerik.com/kendo-ui/service/products
                                           $.ajax({
                                                      type: "GET",
-                                                     url: settingsHome.getServerRoot() + "zhihai/MessageIndividual?contactId={0}&messageId={1}".format(self.contact.UserId, messageId),
+                                                     url: settingsHome.getServerRoot() + "zhihai/MessageIndividual/Class?messageId={0}".format(messageId),
                                                      headers: {"Authorization": "bearer " + login.token},
                                                      success: function(result) {
                                                          console.log(JSON.stringify(result));
